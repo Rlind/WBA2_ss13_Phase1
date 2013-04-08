@@ -25,12 +25,12 @@
 	    </xs:element>
 	  </xs:complexType>
 	</xs:element>
-	<xs:element name"cooking">
+	<xs:element name="cooking">
 	  <xs:komplexType>
-	    <xs:element name"time" type="xs:string"/>
-	    <xs:element name"complexity" type="xs:string"/>
-	    <xs:element name"caloric_value" type="xs:string"/>
-	    <xs:element name"description" type="xs:string"/>
+	    <xs:element name="time" type="xs:string"/>
+	    <xs:element name="complexity" type="xs:string"/>
+	    <xs:element name="caloric_value" type="xs:string"/>
+	    <xs:element name="description" type="xs:string"/>
 	  </xs:komplexType>
 	</xs:element>
     <xs:element name="comments">
