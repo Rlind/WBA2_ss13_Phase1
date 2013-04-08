@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.example.org/chefkochXMLSchema" xmlns:tns="http://www.example.org/chefkochXMLSchema" elementFormDefault="qualified">
+
+<xs:schema name="rezept">
+	<xs:element name="photo">
+      <xs:complexType>	
+    	<xs:sequence>
+    	  <xs:element name="id" type="xs:int"/>
+   		  <xs:element name="width" type="xs:int"/>
+   		  <xs:element name="height" type="xs:int"/>
+          <xs:element name="alt" type="xs:string"/>
+          <xs:element name="title" type="xs:string"/>
+          <xs:element name="src" type="xs:string"/>
+        </xs:sequence>
+	  </xs:complexType> 	
+ 	</xs:element>
+	<xs:element name="incredients">
+	  <xs:complexType>
+	    <xs:element name="incredient">
+	      <xs:complexType>
+	        <xs:element name="amount" type="xs:int"/>
+	        <xs:element name="unit" type="xs:string"/>
+	        <xs:element name="name" type="xs:string"/>
+	      </xs:complexType>
+	    </xs:element>
+	  </xs:complexType>
+	</xs:element>
+	<xs:element name"cooking">
+	  <xs:komplexType>
+	    <xs:element name"time" type="xs:string"/>
+	    <xs:element name"complexity" type="xs:string"/>
+	    <xs:element name"caloric_value" type="xs:string"/>
+	    <xs:element name"description" type="xs:string"/>
+	  </xs:komplexType>
+	</xs:element>
+    <xs:element name="comments">
+      <xs:complexType>
+        <xs:element name="coment">
+          <xs:complexType>
+            <xs:element name="user" type="string"/>
+            <xs:element name="date" type="string"/>
+            <xs:element name="text" type="string"/>
+          </xs:complexType>
+        </xs:element>
+      </xs:complexType>
+    </xs:element>
+</xs:schema>
+
+</schema>
