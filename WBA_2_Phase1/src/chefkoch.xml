@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<recipe-incredients id=1618>
+<recipe_incredients id="1618">
 	
 	<slideshow>
 		<photo id="0" width="420" height="280" alt="Lenchen’s Schokoladenkuchen" title="1/60: Foto von mrsasterix" src="http://static.chefkoch-cdn.de/ck.de/rezepte/2/2464/8082-420x280-fix-lenchen_s_schokoladenkuchen.jpg"></photo>
 		<photo id="1" width="420" height="280" alt="Lenchen’s Schokoladenkuchen 1" title="2/60: Foto von Lari" src="http://static.chefkoch-cdn.de/ck.de/rezepte/2/2464/9090-960x720-lenchen_s_schokoladenkuchen.jpg"></photo>
-		<photo id="2" width="420" height="280" alt="Lenchen’s Schokoladenkuchen 2" title="3/60: Foto von Stranger"src="http://static.chefkoch-cdn.de/ck.de/rezepte/2/2464/9590-960x720-lenchen_s_schokoladenkuchen.jpg"></photo>
+		<photo id="2" width="420" height="280" alt="Lenchen’s Schokoladenkuchen 2" title="3/60: Foto von Stranger" src="http://static.chefkoch-cdn.de/ck.de/rezepte/2/2464/9590-960x720-lenchen_s_schokoladenkuchen.jpg"></photo>
 		<!-- usw. -->
 	</slideshow>
 	
@@ -20,7 +20,7 @@
 			<unit>g</unit>
 			<name>Zucker</name>
 		</incredient>
-		<incredient src="http://www.chefkoch.de/magazin/artikel/105,0/Chefkoch/Schokolade.html"
+		<incredient src="http://www.chefkoch.de/magazin/artikel/105,0/Chefkoch/Schokolade.html">
 			<amount>150</amount>
 			<unit>g</unit>
 			<name>Schokolade</name>
@@ -55,10 +55,10 @@
 	
 	<comments>
 		<comment>
-		<user src="http://static.chefkoch-cdn.de/ck.de/avatar/7455508321160e61bbf4bebcc723bee6-60fix.jpg">Bossie</user>
-		<date>17.02.2003 09:38 Uhr</date>
-		<text>Habe den Kuchen am Sonntag gebacken, er war sehr lecker ist aber auch sehr mächtig.LG Anne</text>
+			<user src="http://static.chefkoch-cdn.de/ck.de/avatar/7455508321160e61bbf4bebcc723bee6-60fix.jpg">Bossie</user>
+			<date>17.02.2003 09:38 Uhr</date>
+			<text>Habe den Kuchen am Sonntag gebacken, er war sehr lecker ist aber auch sehr mächtig.LG Anne</text>
 		</comment>
 	</comments>
 	
-</recipe-incredients>
+</recipe_incredients>
