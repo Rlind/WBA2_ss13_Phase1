@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+	
+<schlagzeug_anmeldung>
+	<schlagzeug xmlns="http://www.gm.fh-koeln.de/~vsch/anmeldung/gruppenanmeldung.html">
+		<grp id="0"/>
+		<name>Trod</name>
+		<vname>Mark</nname>
+		<geb format="dd.mm.yyyy">20.11.1965</geb>
+		<mail>mtrod@mail.de</mail>
+		<erfahrung value ="p"/>
+		<trommel>true</trommel>
+		<description>--</description>
+	</schlagzeug>
+	<schlagzeug  xmlns="http://www.gm.fh-koeln.de/~vsch/anmeldung/gruppenanmeldung.html">
+		<grp id="1"/>
+		<name>Klas</name>
+		<vname>Susane</nname>
+		<geb format="dd.mm.yyyy">04.02.1980</geb>
+		<mail>ksus@mail.de</mail>
+		<erfahrung value ="a"/>
+		<trommel>true</trommel>
+		<description>--</description>
+	</schlagzeug>
+</schlagzeug_anmeldung>
+
