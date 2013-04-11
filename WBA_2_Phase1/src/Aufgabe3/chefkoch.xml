@@ -2,6 +2,8 @@
 
 <recipe_incredients id="1618">
 	
+	<title>Lenchen’s Schokoladenkuchen</title>
+	
 	<slideshow>
 		<photo id="0" width="420" height="280" alt="Lenchen’s Schokoladenkuchen" title="1/60: Foto von mrsasterix" src="http://static.chefkoch-cdn.de/ck.de/rezepte/2/2464/8082-420x280-fix-lenchen_s_schokoladenkuchen.jpg"></photo>
 		<photo id="1" width="420" height="280" alt="Lenchen’s Schokoladenkuchen 1" title="2/60: Foto von Lari" src="http://static.chefkoch-cdn.de/ck.de/rezepte/2/2464/9090-960x720-lenchen_s_schokoladenkuchen.jpg"></photo>
@@ -9,7 +11,7 @@
 		<!-- usw. -->
 	</slideshow>
 	
-	<incredients>
+	<incredients portion="16">
 		<incredient>
 			<amount>200</amount>
 			<unit>g</unit>
