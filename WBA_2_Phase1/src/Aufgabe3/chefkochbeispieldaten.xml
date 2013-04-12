@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<recipes R_id="13">
+	<title>
+		<title_content>Apfeltasche</title_content>
+	</title>
+	<subtitle>
+		<subtitle_content>von Oma</subtitle_content>
+	</subtitle>
+	<pictures>
+		<picture P_id="1" width="250" height="250" scr="http://www.medieninformatik.fh-koeln.de/w/index.php/WBA2_SoSe13:Phase1"
+			usr="benny23" />
+	</pictures>
+	<ingredients portion="5">
+		<ingredient>
+			<amount>200</amount>
+			<unit>g</unit>
+			<name>
+				<name_content>Zucker</name_content>
+			</name>
+		</ingredient>
+	</ingredients>
+	<cooking>
+		<work_time>
+			<number>1</number>
+			<chronological_unit>Stunde</chronological_unit>
+		</work_time>
+		<complexity>einfach</complexity>
+		<caloric_value>1234</caloric_value>
+		<description>
+			<decription_content>Blabla</decription_content>
+		</description>
+	</cooking>
+	<comments>
+		<comment>
+			<user username="benny23" avatar="usr/benny23.jgp" />
+			<timestamp>2012-12-13T12:12:12</timestamp>
+			<content>
+				<content_content>str1234</content_content>
+			</content>
+			<usefull>true</usefull>
+		</comment>
+	</comments>
+</recipes>

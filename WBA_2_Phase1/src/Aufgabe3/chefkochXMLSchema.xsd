@@ -1,80 +1,166 @@
-<?xml version="1.0" encoding="utf-8"?>
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.example.org/Aufgabe_3d" xmlns:tns="http://www.example.org/Aufgabe_3d" elementFormDefault="qualified">
-  
-  <xs:element name="recipe_incredients">
-    <xs:complexType>
-     <xs:attribute name="rid" type="xs:string" />
-      <xs:sequence>
-        
-        <xs:element name="title" type="xs:string" minOccurs="1" maxOccors="1"/>
-        <xs:element name="subtitle" type="xs:string" minOccurs="0" maxOccors="1"/>
-   
-        <xs:element name="slideshow">
-          <xs:complexType>
-            <xs:sequence>
-              <xs:element name="photo" >
-                <xs:complexType>               
-                  <xs:attribute name="pid" type="xs:string" use="required"/>
-                  <xs:attribute name="width" type="xs:string" />
-                  <xs:attribute name="height" type="xs:string" />
-                  <xs:attribute name="usr" type="xs:string" use="required"/>
-                  <xs:attribute name="src" type="xs:string" default="defaultlink" use="required"/>
-                 </xs:element>
-                </xs:complexType>
-              </xs:element>
-            </xs:sequence>
-          </xs:complexType>
-        </xs:element>
-        
-        <xs:element name="incredients" minOccurs="1" maxOccurs="1">
-          <xs:complexType>
-            <xs:sequence>
-              <xs:element name="incredient" minOccurs="1" maxOccurs="unbounded">
-                <xs:complexType>
-                  <xs:sequence>
-                    <xs:element name="amount" type="xs:string" minOccurs="0" maxOccurs="1" />
-                    <xs:element name="unit" type="xs:string" minOccurs="0" maxOccurs="1"/>
-                    <xs:element name="name" type="xs:string" minOccurs="1" maxOccurs="1" />
-                  </xs:sequence>
-                  <xs:attribute name="src" type="xs:string" />
-                </xs:complexType>
-              </xs:element>
-            </xs:sequence>
-            <xs:attribute name="portion" type="xs:positiveInteger"  />
-          </xs:complexType>
-        </xs:element>
-        
-        <xs:element name="cooking" minOccurs="1" maxOccurs="1">
-          <xs:complexType>
-            <xs:sequence>
-              <xs:element name="time" type="xs:string" minOccurs="0" />
-              <xs:element name="complexity" type="xs:string" minOccurs="0" />
-              <xs:element name="caloric_value" type="xs:string" minOccurs="0" />
-              <xs:element name="description" type="xs:string" maxOccurs="1" />
-            </xs:sequence>
-          </xs:complexType>
-        </xs:element>
-       
-        <xs:element name="comments">
-          <xs:complexType>
-            <xs:sequence>
-              <xs:element name="comment" minOccurs="0" maxOccurs="unbounded">
-               <xs:attribute name="usr" type="xs:string" use="required"/>
-                <xs:attribute name="avatar" type="xs:string" use="required"/>
-                <xs:complexType>
-                  <xs:sequence>
-                    <xs:element name="date" type="xs:dateTime" minOccurs="0" />
-                    <xs:element name="text" type="xs:string"/>
-                    <xs:element name="uselull" type="xs:string" minOccurs="0" />
-                   </xs:element>
-                  </xs:sequence>
-                </xs:complexType>
-              </xs:element>
-            </xs:sequence>
-          </xs:complexType>
-        </xs:element>
-      
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>  
-</xs:schema>
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="http://www.example.org/Aufgabe_3d" xmlns:rezept="http://www.example.org/Aufgabe_3d"
+	elementFormDefault="qualified">
+
+
+
+	<xsd:element name="recipes">
+		<xsd:complexType>
+			<xsd:sequence>
+
+
+
+				<xsd:element name="title" minOccurs="1" maxOccurs="1">
+					<xsd:complexType>
+						<xsd:sequence>
+							<xsd:element name="title_content">
+								<xsd:simpleType>
+									<xsd:restriction base="xsd:string">
+										<xsd:minLength value="5" />
+										<xsd:pattern value="(.)+" />
+									</xsd:restriction>
+								</xsd:simpleType>
+							</xsd:element>
+						</xsd:sequence>
+					</xsd:complexType>
+				</xsd:element>
+				<xsd:element name="subtitle" minOccurs="0" maxOccurs="1">
+					<xsd:complexType>
+						<xsd:sequence>
+							<xsd:element name="subtitle_content">
+								<xsd:simpleType>
+									<xsd:restriction base="xsd:string">
+										<xsd:minLength value="5" />
+										<xsd:pattern value="(.)+" />
+									</xsd:restriction>
+								</xsd:simpleType>
+							</xsd:element>
+						</xsd:sequence>
+					</xsd:complexType>
+				</xsd:element>
+				<xsd:element name="pictures">
+
+					<xsd:complexType>
+						<xsd:sequence>
+							<xsd:element name="picture" minOccurs="0">
+								<xsd:complexType>
+									<xsd:attribute name="P_id" type="xsd:int" use="required" />
+									<xsd:attribute name="width" type="xsd:int" />
+									<xsd:attribute name="height" type="xsd:int" />
+									<xsd:attribute name="scr" type="xsd:string" use="required" />
+									<xsd:attribute name="usr" type="xsd:string" use="required" />
+								</xsd:complexType>
+							</xsd:element>
+						</xsd:sequence>
+					</xsd:complexType>
+				</xsd:element>
+				<xsd:element name="ingredients" minOccurs="1" maxOccurs="1">
+					<xsd:complexType>
+						<xsd:sequence>
+							<xsd:element maxOccurs="unbounded" minOccurs="1"
+								name="ingredient">
+								<xsd:complexType>
+									<xsd:sequence>
+										<xsd:element name="amount" type="xsd:int"
+											maxOccurs="1" minOccurs="0" />
+										<xsd:element name="unit" type="xsd:string"
+											maxOccurs="1" minOccurs="0" />
+										<xsd:element name="name" maxOccurs="1" minOccurs="1">
+											<xsd:complexType>
+												<xsd:sequence>
+													<xsd:element name="name_content">
+														<xsd:simpleType>
+															<xsd:restriction base="xsd:string">
+																<xsd:minLength value="5" />
+																<xsd:pattern value="(.)+" />
+															</xsd:restriction>
+														</xsd:simpleType>
+													</xsd:element>
+												</xsd:sequence>
+											</xsd:complexType>
+										</xsd:element>
+									</xsd:sequence>
+								</xsd:complexType>
+							</xsd:element>
+						</xsd:sequence>
+						<xsd:attribute name="portion" type="xsd:positiveInteger"
+							use="required" />
+					</xsd:complexType>
+				</xsd:element>
+				<xsd:element name="cooking" minOccurs="1" maxOccurs="1">
+					<xsd:complexType>
+						<xsd:sequence>
+							<xsd:element name="work_time" minOccurs="0">
+								<xsd:complexType>
+									<xsd:sequence>
+										<xsd:element name="number" type="xsd:int" />
+										<xsd:element name="chronological_unit" type="xsd:string" />
+									</xsd:sequence>
+								</xsd:complexType>
+							</xsd:element>
+							<xsd:element name="complexity" type="xsd:string"
+								minOccurs="0" />
+							<xsd:element name="caloric_value" type="xsd:string"
+								minOccurs="0" />
+							<xsd:element name="description" maxOccurs="1">
+								<xsd:complexType>
+									<xsd:sequence>
+										<xsd:element name="decription_content">
+											<xsd:simpleType>
+												<xsd:restriction base="xsd:string">
+													<xsd:minLength value="10" />
+													<xsd:pattern value="(.)+" />
+												</xsd:restriction>
+											</xsd:simpleType>
+										</xsd:element>
+									</xsd:sequence>
+								</xsd:complexType>
+							</xsd:element>
+						</xsd:sequence>
+					</xsd:complexType>
+				</xsd:element>
+				<xsd:element name="comments">
+					<xsd:complexType>
+						<xsd:sequence>
+							<xsd:element name="comment" minOccurs="0" maxOccurs="unbounded">
+								<xsd:complexType>
+									<xsd:sequence>
+										<xsd:element name="user" maxOccurs="unbounded">
+											<xsd:complexType>
+												<xsd:attribute name="username" type="xsd:string"
+													use="required" />
+												<xsd:attribute name="avatar" type="xsd:string"
+													use="required" />
+											</xsd:complexType>
+										</xsd:element>
+										<xsd:element name="timestamp" type="xsd:dateTime" />
+										<xsd:element name="content">
+											<xsd:complexType>
+												<xsd:sequence>
+													<xsd:element name="content_content">
+														<xsd:simpleType>
+															<xsd:restriction base="xsd:string">
+																<xsd:minLength value="3" />
+																<xsd:pattern value="(.)+" />
+															</xsd:restriction>
+														</xsd:simpleType>
+													</xsd:element>
+												</xsd:sequence>
+											</xsd:complexType>
+										</xsd:element>
+										<xsd:element name="usefull" type="xsd:boolean"
+											minOccurs="0" />
+									</xsd:sequence>
+								</xsd:complexType>
+							</xsd:element>
+						</xsd:sequence>
+					</xsd:complexType>
+				</xsd:element>
+
+			</xsd:sequence>
+			<xsd:attribute name="R_id" type="xsd:int" use="required" />
+		</xsd:complexType>
+	</xsd:element>
+</xsd:schema>
