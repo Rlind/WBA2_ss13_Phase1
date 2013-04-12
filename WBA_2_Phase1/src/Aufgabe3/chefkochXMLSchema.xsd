@@ -1,16 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
-	targetNamespace="http://www.example.org/Aufgabe_3d" xmlns:rezept="http://www.example.org/Aufgabe_3d"
+	targetNamespace="http://www.example.org/Aufgabe_3d" xmlns="http://www.example.org/Aufgabe_3d"
 	elementFormDefault="qualified">
-
-
 
 	<xsd:element name="recipes">
 		<xsd:complexType>
 			<xsd:sequence>
-
-
 
 				<xsd:element name="title" minOccurs="1" maxOccurs="1">
 					<xsd:complexType>
@@ -40,8 +36,8 @@
 						</xsd:sequence>
 					</xsd:complexType>
 				</xsd:element>
+				
 				<xsd:element name="pictures">
-
 					<xsd:complexType>
 						<xsd:sequence>
 							<xsd:element name="picture" minOccurs="0">
