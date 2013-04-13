@@ -1,88 +1,48 @@
-<?xml version="1.0" encoding="utf-8"?>
-<kochbuch>
-	<recipes R_id="13">
-		<title>
-			<title_content>Apfeltasche</title_content>
-		</title>
-		<subtitle>
-			<subtitle_content>von Oma</subtitle_content>
-		</subtitle>
-		<pictures>
-			<picture P_id="1" width="250" height="250"
+<?xml version="1.0" encoding="UTF-8"?>
+<rezept:kochbuch >
+  <rezept:recipes R_id="13" xmlns:rezept="http://www.example.org/Aufgabe_3d" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.example.org/Aufgabe_3d chefkochXMLSchema.xsd ">
+    <rezept:title>Apfeltasche</rezept:title>
+    <rezept:subtitle>von Oma</rezept:subtitle>
+    <rezept:picture  P_id="1" width="250" height="250"
 				scr="http://www.medieninformatik.fh-koeln.de/w/index.php/WBA2_SoSe13:Phase1"
 				usr="benny23" />
-		</pictures>
-		<ingredients portion="5">
-			<ingredient>
-				<amount>200</amount>
-				<unit>g</unit>
-				<name>
-					<name_content>Zucker</name_content>
-				</name>
-			</ingredient>
-		</ingredients>
-		<cooking>
-			<work_time>
-				<number>1</number>
-				<chronological_unit>Stunde</chronological_unit>
-			</work_time>
-			<complexity>einfach</complexity>
-			<caloric_value>1234</caloric_value>
-			<description>
-				<decription_content>Blabla</decription_content>
-			</description>
-		</cooking>
-		<comments>
-			<comment>
-				<user username="benny23" avatar="usr/benny23.jgp" />
-				<timestamp>2012-12-13T12:12:12</timestamp>
-				<content>
-					<content_content>str1234</content_content>
-				</content>
-				<usefull>true</usefull>
-			</comment>
-		</comments>
-	</recipes>
-	
-	<recipes R_id="15">
-		<title>
-			<title_content>Bananen</title_content>
-		</title>
-		<subtitle>
-			<subtitle_content>sehr lecker</subtitle_content>
-		</subtitle>
-		<pictures>
-			<picture  P_id="1" height="300" scr="img/pic.jpg" usr="me112" width="300"/>
-		</pictures>
-		<ingredients portion="1">
-			<ingredient>
-				<amount>1</amount>
-				<unit>kg</unit>
-				<name>
-					<name_content>Banane</name_content>
-				</name>
-			</ingredient>
-		</ingredients>
-		<cooking>
-			<work_time>
-				<number>1</number>
-				<chronological_unit>Min</chronological_unit>
-			</work_time>
-			<complexity>einfach</complexity>
-			<caloric_value>Keine Angabe</caloric_value>
-			<description>
-				<decription_content>Bananen essen und fertig!</decription_content>
-			</description>
-		</cooking>
-		<comments>
-			<comment>
-				<user avatar="usr/me1222.jgp" username="me1222" />
-				<timestamp>2001-12-31T12:00:00</timestamp>
-				<content>
-					<content_content>;-)</content_content>
-				</content>
-				<usefull>true</usefull>
-			</comment>
-		</comments>
-	</recipes>
-</kochbuch>
+    <rezept:ingredient portion="4">
+      <rezept:amount>200</rezept:amount>
+      <rezept:unit>g</rezept:unit>
+      <rezept:name>Zucker</rezept:name>
+    </rezept:ingredient>
+    <rezept:work_time>1st</rezept:work_time>
+    <rezept:complexity>simple</rezept:complexity>
+    <rezept:caloric_value>1234</rezept:caloric_value>
+    <rezept:decription>Blabla</rezept:decription>
+    <rezept:comment>
+      <rezept:user username="benny23" avatar="usr/benny23.jgp"/>
+      <rezept:timestamp>2012-12-13T12:12:12</rezept:timestamp>
+      <rezept:content>str1234</rezept:content>
+      <rezept:usefull>true</rezept:usefull>
+    </rezept:comment>
+  </rezept:recipes>
+    <rezept:recipes R_id="2">
+    <rezept:title>Bananen</rezept:title>
+    <rezept:subtitle>sehr Lecker</rezept:subtitle>
+    <rezept:picture  R_id="0" xmlns:p="http://www.example.org/Aufgabe_3d"
+		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		xsi:schemaLocation="http://www.example.org/Aufgabe_3d chefkochXMLSchema.xsd "/>
+    <rezept:ingredient portion="1">
+      <rezept:amount>1</rezept:amount>
+      <rezept:unit>kg</rezept:unit>
+      <rezept:name>Banane</rezept:name>
+    </rezept:ingredient>
+    <rezept:work_time>1m</rezept:work_time>
+    <rezept:complexity>simple</rezept:complexity>
+    <rezept:caloric_value>keine Angabe</rezept:caloric_value>
+    <rezept:decription>Banane essen und fertig</rezept:decription>
+    <rezept:comment>
+      <rezept:user avatar="usr/me1222.jgp" username="me1222" />
+      <rezept:timestamp>2001-12-31T12:00:00</rezept:timestamp>
+      <rezept:content>:)</rezept:content>
+      <rezept:usefull>true</rezept:usefull>
+    </rezept:comment>
+  </rezept:recipes>
+
+</rezept:kochbuch>
