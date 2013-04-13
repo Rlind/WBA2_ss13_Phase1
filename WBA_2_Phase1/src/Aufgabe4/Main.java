@@ -1,51 +1,43 @@
 package Aufgabe4;
 
-import java.io.File;
+import java.io.*;
 
 import javax.xml.XMLConstants;
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
+import javax.xml.bind.Marshaller;
+import javax.xml.bind.Unmarshaller;
+import javax.xml.datatype.DatatypeConfigurationException;
+import javax.xml.datatype.DatatypeFactory;
+import javax.xml.datatype.XMLGregorianCalendar;
 import javax.xml.validation.Schema;
 import javax.xml.validation.SchemaFactory;
 
-import javax.xml.bind.Marshaller;
-import javax.xml.bind.Unmarshaller;
-
 import org.xml.sax.SAXException;
-
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.Scanner;
-
-import java.io.*;
 
 
 import Aufgabe4.Recipes.Recipe;
+import Aufgabe4.Recipes.Recipe.Comment;
 import Aufgabe4.Recipes.Recipe.Comment.User;
 import Aufgabe4.Recipes.Recipe.*;
 
 import java.util.*;
 
-import Aufgabe3.*;
 
-import javax.xml.datatype.DatatypeConfigurationException;
-import javax.xml.datatype.DatatypeFactory;
-import javax.xml.datatype.XMLGregorianCalendar;
-
-
+/**
+ * @author Jeremy Dennis Zervo
+ *
+ */
 public class Main {
 	private static Scanner in;
 
 	/**
 	 * @param args
 	 * @throws JAXBException 
-	 * @throws IOException 
+	 * @throws SAXException 
+	 * @throws DatatypeConfigurationException 
 	 */
-	public static void main(String[] args) throws JAXBException, IOException {
+	public static void main(String[] args) throws JAXBException, SAXException, DatatypeConfigurationException {
 
 
 
@@ -58,18 +50,18 @@ public class Main {
 		//Gewaehltes Rezept jetzt benutzbar machen
 		Recipe recipe = recipes.getRecipe().get(choice);
 
-		//Auswahl was mit dem Rezept passieren soll
+		//Auswahl, was mit dem Rezept passieren soll
 				int choice_2_aktion = choice_2(recipe);
 
 				switch(choice_2_aktion)
 				{
-			/**case 2:
-					//Verfassen eines neuen Kommentares
-					Comments comments = commentList(recipe);
-					//Anfügen des Kommentares an das Rezept
-					rez.setComments(comments);
-					//Übergabe an die XML-File
-					rezeptMarshaller("src/Schoko_Schema_2.xsd" , "src/Schokokuchen.xml", cobo);**/
+				case 2:
+					//Neuer Kommentar anlegen
+					Comment comment = newComment();
+					//Kommentar ins Rezeptobjekt legen
+					recipe.comment.add(comment);
+					//Speichern in die XML-Datei
+					recipesMarshaller("src/Aufgabe_3d.xsd" , "src/Aufgabe_3d_beispiel.xml", recipes);
 
 				case 1:
 					//Ausgabe des Rezeptes
@@ -83,6 +75,38 @@ public class Main {
 				}
 	}
 
+
+
+	/**
+	 * @return comment
+	 * @throws DatatypeConfigurationException 
+	 */
+	public static Comment newComment() throws DatatypeConfigurationException {
+        in = new Scanner(System.in);
+        Comment comment = new Comment();
+        User user = new User();
+        System.out.println("Wie heißen Sie?");
+        user.setUsername(in.nextLine());
+        System.out.println("Wo liegt ihr Bild?");
+        user.setAvatar(in.nextLine());
+        comment.setUser(user);
+        
+        System.out.println("Was wollen Sie sagen?");
+        comment.setContent(in.nextLine());
+        
+        GregorianCalendar c = new GregorianCalendar();
+        Date date = new Date(System.currentTimeMillis());
+        c.setTime(date);
+        XMLGregorianCalendar now = DatatypeFactory.newInstance().newXMLGregorianCalendar(c);
+        comment.setTimestamp(now);
+        
+        return comment;
+        
+    }
+
+	/**
+	 * @param recipe
+	 */
 	public static void plotRecipe(Recipe recipe) {
 		System.out.println(recipe.getTitle() + "\n\n");
 		System.out.println(recipe.getSubtitle() + "\n\n");
@@ -112,12 +136,11 @@ public class Main {
 		System.out.print("\n\nKommentare\n\n");
 		for(Comment a : recipe.getComment())
 		{
-
-
-			//System.out.print("User: " + a.getUser().getUsername() + "\t");
-			//System.out.print("Avatar: " + a.getUser().getUsername() + "\n");
+			System.out.print("User: " + a.getUser().getUsername() + "\t");
+			System.out.print("Avatar: " + a.getUser().getAvatar() + "\n");
 			System.out.print(a.getTimestamp() + "\n");
 			System.out.print(a.getContent() + "\n\n");
+			System.out.print("Kommentar hilfreich?:  " + a.isUsefull() + "\n");
 		}
 	}
 
@@ -141,10 +164,16 @@ public class Main {
 			return choice;
 	}
 
+	/**
+	 * @param recipes
+	 * @return choice
+	 * @throws JAXBException
+	 */
 	public static int choice(Recipes recipes) throws JAXBException{
 		in = new Scanner(System.in);
 
 		do{
+			System.out.println("Die Rezepte:" + "\n");
 			//Abfrage über alle Rezepte an den Users
 			for (Recipe r : recipes.getRecipe()) {
 				System.out.println("\"" + r.getTitle() + "\" (" + r.getRId()	+ ")");					
@@ -158,58 +187,34 @@ public class Main {
 
 	}
 
-	public static Comment newComment () {
-			in = new Scanner(System.in);
-			
-		Comment comment = new Comment();
-		
-
-		XMLGregorianCalendar date = null;
-		
-		try {
-			System.out.println("Wie ist Ihr Name?");
-			User user = new User();
-			String uer = in.next();
-			user.setUsername(uer);
-//		System.out.println("");
-//			user.setAvatar("kein Bild vorhanden");
-			 
-			System.out.println("Ihr Kommentar: ");
-			String comm = in.next();
-			comment.setContent(comm);
-
-		
-				date = DatatypeFactory.newInstance().newXMLGregorianCalendar( new GregorianCalendar() );
-			} catch  ( DatatypeConfigurationException e ) {
-				e.printStackTrace();
-			}
-			comment.setTimestamp( date );
-
-			
-			
-		return  comment;
-		}
-	
-
-	
-/**	public static Comments commentList(Recipes rez) throws  JAXBException{
-
-		Comments comments = new Comments();
-		Comment comment = newComment();
-		for (Comment a : rez.getComments().getComment())
-		{
-			comments.getComment().add(a);
-		}
-		comments.getComment().add(comment);
-
-		return comments;
-	}
-	**/
+	/**
+	 * @return
+	 * @throws JAXBException
+	 */
 	public static Recipes recipesUnmarshaller() throws JAXBException {
 		JAXBContext jaxContext = JAXBContext.newInstance(ObjectFactory.class);
 		Unmarshaller unmar = jaxContext.createUnmarshaller();
 		Recipes recipes = (Recipes) unmar.unmarshal(new File("src/Aufgabe3/chefkochbeispieldaten.xml"));
 		return recipes;
 	}
+
+    /**
+     * 
+     * @param xsdSchema
+     * @param xmlDatei
+     * @param jaxbElement
+     * @throws SAXException
+     * @throws JAXBException
+     */
+    private static void recipesMarshaller(String xsdSchema, String xmlDatei, Recipes jaxbElement) throws SAXException, JAXBException {
+        SchemaFactory schemaFactory = SchemaFactory.newInstance(XMLConstants.W3C_XML_SCHEMA_NS_URI);
+        Schema schema = schemaFactory.newSchema(new File(xsdSchema));
+        JAXBContext jaxbContext = JAXBContext.newInstance(ObjectFactory.class);
+        Marshaller marshaller = jaxbContext.createMarshaller();
+        marshaller.setSchema(schema);
+        marshaller.setProperty(Marshaller.JAXB_ENCODING, "UTF-8");
+        marshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, Boolean.TRUE);
+        marshaller.marshal(jaxbElement, new File(xmlDatei));
+    }
 
 }

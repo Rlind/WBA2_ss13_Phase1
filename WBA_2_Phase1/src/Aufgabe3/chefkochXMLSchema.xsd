@@ -101,7 +101,7 @@
 								<xsd:complexType>
 									<xsd:sequence>
 
-										<xsd:element name="user" minOccurs="1" maxOccurs="unbounded">
+										<xsd:element name="user">
 											<xsd:complexType>
 												<xsd:sequence>
 													<xsd:element name="username" type="xsd:string"

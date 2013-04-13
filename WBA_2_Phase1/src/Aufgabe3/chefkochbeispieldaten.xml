@@ -52,5 +52,14 @@
       <rezept:content>:)jkdhjsfhksd</rezept:content>
       <rezept:usefull>true</rezept:usefull>
     </rezept:comment>
+    <rezept:comment>
+      <rezept:user>   	
+      	<rezept:username>=me1222</rezept:username>
+      	<rezept:avatar>usr/benny23.jgp</rezept:avatar>
+      </rezept:user>
+      <rezept:timestamp>2001-12-31T12:00:00</rezept:timestamp>
+      <rezept:content>:)jkdhjsfhksd</rezept:content>
+      <rezept:usefull>true</rezept:usefull>
+    </rezept:comment>
   </rezept:recipe>
 </rezept:recipes>
