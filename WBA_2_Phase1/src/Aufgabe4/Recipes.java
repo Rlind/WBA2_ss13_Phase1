@@ -2,7 +2,7 @@
 // Diese Datei wurde mit der JavaTM Architecture for XML Binding(JAXB) Reference Implementation, v2.2.6 generiert 
 // Siehe <a href="http://java.sun.com/xml/jaxb">http://java.sun.com/xml/jaxb</a> 
 // Änderungen an dieser Datei gehen bei einer Neukompilierung des Quellschemas verloren. 
-// Generiert: 2013.04.13 um 03:19:15 PM CEST 
+// Generiert: 2013.04.13 um 06:29:48 PM CEST 
 //
 
 
@@ -120,8 +120,10 @@ import javax.xml.datatype.XMLGregorianCalendar;
  *                               &lt;complexType>
  *                                 &lt;complexContent>
  *                                   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *                                     &lt;attribute name="username" use="required" type="{http://www.w3.org/2001/XMLSchema}string" />
- *                                     &lt;attribute name="avatar" use="required" type="{http://www.w3.org/2001/XMLSchema}string" />
+ *                                     &lt;sequence>
+ *                                       &lt;element name="username" type="{http://www.w3.org/2001/XMLSchema}string"/>
+ *                                       &lt;element name="avatar" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+ *                                     &lt;/sequence>
  *                                   &lt;/restriction>
  *                                 &lt;/complexContent>
  *                               &lt;/complexType>
@@ -288,8 +290,10 @@ public class Recipes {
      *                     &lt;complexType>
      *                       &lt;complexContent>
      *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-     *                           &lt;attribute name="username" use="required" type="{http://www.w3.org/2001/XMLSchema}string" />
-     *                           &lt;attribute name="avatar" use="required" type="{http://www.w3.org/2001/XMLSchema}string" />
+     *                           &lt;sequence>
+     *                             &lt;element name="username" type="{http://www.w3.org/2001/XMLSchema}string"/>
+     *                             &lt;element name="avatar" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+     *                           &lt;/sequence>
      *                         &lt;/restriction>
      *                       &lt;/complexContent>
      *                     &lt;/complexType>
@@ -610,8 +614,10 @@ public class Recipes {
          *           &lt;complexType>
          *             &lt;complexContent>
          *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-         *                 &lt;attribute name="username" use="required" type="{http://www.w3.org/2001/XMLSchema}string" />
-         *                 &lt;attribute name="avatar" use="required" type="{http://www.w3.org/2001/XMLSchema}string" />
+         *                 &lt;sequence>
+         *                   &lt;element name="username" type="{http://www.w3.org/2001/XMLSchema}string"/>
+         *                   &lt;element name="avatar" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+         *                 &lt;/sequence>
          *               &lt;/restriction>
          *             &lt;/complexContent>
          *           &lt;/complexType>
@@ -763,8 +769,10 @@ public class Recipes {
              * &lt;complexType>
              *   &lt;complexContent>
              *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-             *       &lt;attribute name="username" use="required" type="{http://www.w3.org/2001/XMLSchema}string" />
-             *       &lt;attribute name="avatar" use="required" type="{http://www.w3.org/2001/XMLSchema}string" />
+             *       &lt;sequence>
+             *         &lt;element name="username" type="{http://www.w3.org/2001/XMLSchema}string"/>
+             *         &lt;element name="avatar" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+             *       &lt;/sequence>
              *     &lt;/restriction>
              *   &lt;/complexContent>
              * &lt;/complexType>
@@ -773,12 +781,14 @@ public class Recipes {
              * 
              */
             @XmlAccessorType(XmlAccessType.FIELD)
-            @XmlType(name = "")
+            @XmlType(name = "", propOrder = {
+                "username",
+                "avatar"
+            })
             public static class User {
 
-                @XmlAttribute(name = "username", required = true)
+                @XmlElement(required = true)
                 protected String username;
-                @XmlAttribute(name = "avatar", required = true)
                 protected String avatar;
 
                 /**
