@@ -24,10 +24,9 @@ import Aufgabe4.Recipes.Recipe.*;
 import java.util.*;
 
 
-/**
- * @author Jeremy Dennis Zervo
- *
- */
+
+ 
+ 
 public class Main {
 	private static Scanner in;
 
@@ -69,7 +68,7 @@ public class Main {
 					break;
 
 				default:
-					//Wenn Programm nicht ausführbar, wird es beendet
+					//Wenn Programm nicht ausfï¿½hrbar, wird es beendet
 					System.out.print("Das Programm wird beendet!");
 					System.exit(0);
 				}
@@ -85,7 +84,7 @@ public class Main {
         in = new Scanner(System.in);
         Comment comment = new Comment();
         User user = new User();
-        System.out.println("Wie heißen Sie?");
+        System.out.println("Wie heiï¿½en Sie?");
         user.setUsername(in.nextLine());
         System.out.println("Wo liegt ihr Bild?");
         user.setAvatar(in.nextLine());
@@ -152,10 +151,10 @@ public class Main {
 		in = new Scanner(System.in);
 		int choice = -1;
 
-			//Abfrage der Möglichkeiten des aktuellen Rezeptes 
+			//Abfrage der Mï¿½glichkeiten des aktuellen Rezeptes 
 			System.out.println("Das Rezept " + recipe.getTitle() + " anzeigen? (1)");
 			System.out.println("Ein Kommentar zu " + recipe.getTitle() + " abgeben? (2)");
-			System.out.println("Möchten Sie das Programm beenden? (3)");
+			System.out.println("Mï¿½chten Sie das Programm beenden? (3)");
 
 			choice = in.nextInt();
 			if ((choice >= 1) && (choice < 4)){
@@ -174,7 +173,7 @@ public class Main {
 
 		do{
 			System.out.println("Die Rezepte:" + "\n");
-			//Abfrage über alle Rezepte an den Users
+			//Abfrage ï¿½ber alle Rezepte an den Users
 			for (Recipe r : recipes.getRecipe()) {
 				System.out.println("\"" + r.getTitle() + "\" (" + r.getRId()	+ ")");					
 			}
